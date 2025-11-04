@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Get a sketch</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <header>
+            <span class="inter_default_font" id="respo_menu">&#8801;</span>
+            <h1 class="inter_default_font">Get a sketch</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a>Sketches</a></li>
+                    <li><a>About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="index_landing">
+                <img src="media/sketch5.png">
+                <p class="inter_default_font ">“Get a sketch” is a website to share art. Download a picture, send it to make someone smile. <br>Donation voluntarily.</p>
+            </section>
+
+            <!-- create Gallery -->
+            <section>
+                <div class="gallery"></div>
+            </section>
+
+
+        </main>
+
+
+
+<script src="jQuery/jQuery.js"></script>
+<script>
+
+
+// Using an object literal for a jQuery feature
+var myFeature = {
+    init: function() {
+        $("#respo_menu").click(this.openNav);
+        this.loadImages();
+    },
+    openNav: function() {
+        $("header nav").slideToggle();
+    },
+    loadImages: function() {
+        $.getJSON('media/images.json', function(images) {
+            $.each(images, function(index, image) {
+                $('.gallery').append(`<img src="media/${image}" alt="One sketch shown on website">`);
+            });
+        });
+
+    }
+};
+
+$(document).ready(function() {
+    myFeature.init();
+});
+</script>
+    </body>
+
+</html>
