@@ -13,7 +13,7 @@
             <h1 class="inter_default_font"><a href="index.html">Get a sketch &copy;</a></h1>
             <nav>
                 <ul class="inter_default_font">
-                    <li><a href="#">Home</a></li>
+                    <li><a>Home</a></li>
                     <li><a href="#sketches">Sketches</a></li>
                     <li><a href="#about">About</a></li>
                 </ul>
@@ -52,75 +52,31 @@
                     "Get a sketch" is based in Germany and it is not a charitable organizations.
                     Therefore I can't issue tax-deductible donation receipts.
                 </p>
+                <!--Create my own pay pal button with a picture!-->
+                <a><button id="button" class="inter_default_font">Make a Donation</button></a>
+                
+                <p>
+                    Thank you for visiting this page, feel free to ask any questions via the concact page.
+                </p>
+            
             </section>
-
+        </main>
             <footer class="inter_default_font">
-                <a>Impressum</a>
-                <a>Datenschutz</a>
-                <a>Rechtliches</a>
+                <a>Impressum (Legal Notice)</a>
+                <a>Datenschutz (Privacy)</a>
+                <a>Rechtliches (Legal Terms)</a>
+                <a>Contact</a>
                 <a href="#">&#8689;</a>
             </footer>
 
-        </main>
+      
 
         
 
 
 
 <script src="jQuery/jQuery.js"></script>
-<script>
-// Using an object literal for a jQuery feature
-var myFeature = {
-    init: function() {
-        $("#respo_menu").click(this.openNav);
-        this.loadImages();
-        $(".gallery").on("click", "img", function () {
-            myFeature.fullScreenImage.call(this);
-        });
-
-        
-    },
-    openNav: function() {
-        $("header nav").slideToggle();
-    },
-    loadImages: function() {
-        $.getJSON('media/images.json', function(images) {
-            $.each(images, function(index, image) {
-                $('.gallery').append(`<img src="media/${image}" alt="One sketch shown on website">`);
-            });
-        });
-    },
-
-    fullScreenImage: function () {
-        if (document.fullscreenElement) {
-            document.exitFullscreen();
-        } else {
-            const elem = this;
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.webkitRequestFullscreen) {
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) {
-                elem.msRequestFullscreen();
-            }
-        }
-       
-    },
-
-    scroll: function(){
-        function scrollToTop() {
-            $("html, body").animate({ scrollTop: $('#title1').offset().top }, 1000);
-        }
-    }
-
-
-};
-
-$(document).ready(function() {
-    myFeature.init();
-});
-
-</script>
+<script src="js.js"> </script>
     </body>
 
 </html>
