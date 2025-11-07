@@ -12,7 +12,7 @@ var myFeature = {
         $("header nav").slideToggle();
     },
     loadImages: function () {
-        $.getJSON('media/images.json', function (images) {
+        $.getJSON('images.json', function (images) {
             $.each(images, function (index, image) {
                 $('.gallery').append(`<img src="media/${image}" alt="One sketch shown on website">`);
             });
