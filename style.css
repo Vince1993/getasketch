@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-html{font-size: 1.25rem; background-color: #8f8f9d2b;
+html{font-size: 1.25rem; background-color: #ededf4d7;
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;}
-*{color:rgb(0, 0, 0); box-sizing: border-box;} a{cursor: pointer; text-decoration: none;} a:hover{text-decoration: overline;}
+*{color:rgb(0, 0, 0); box-sizing: border-box; padding: 0; margin:0;} a{cursor: pointer; text-decoration: none;}
 header{border-top: 40px solid black;}
 nav {display: flex; flex-direction: column;}
-nav a{display: none; color: rgb(224, 221, 221); padding:5px; font-size: 1.3rem; font-weight: 400;}
-
+nav a{display: none; color: rgb(224, 221, 221); padding:5px; font-size: 1.3rem; font-weight: 400;} 
 .may_be_a_carousel{display:flex;align-items: center; justify-content: center;}
 .may_be_a_carousel img{display:block; width: 20%; border-radius: 30px;}
 
+.img_wrap{position: relative;}
+  
 
 .img_grid img{width: 100%;
               height: auto;
@@ -20,19 +21,29 @@ nav a{display: none; color: rgb(224, 221, 221); padding:5px; font-size: 1.3rem; 
               align-self: center;    /* centers vertically */
               border-radius: 10px;}
 
-.link_hover_effect{text-decoration: overline;}
+/* overlay badge */
+.overlay-number{position: absolute;
+                top: 5px;
+                left: 5px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                color: #000000;
+                font: 700 18px/50px system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+                text-align: center;
+                margin:auto;
+                pointer-events: none;}
 
-#donation_button{cursor: pointer;margin: 20px; background-color: black; color:aliceblue; border-radius: 10px; font-size: 1rem ;width: 300px; height: 80px; transition: background-color 1s ease;}
-#donation_button:hover, .touch_button{background-color: #EFEFEF; color: black;}
+#donation_button{cursor: pointer;margin: 10px; background-color: black; color:aliceblue; border-radius: 10px; font-size: 1rem; width: 320px; height: 70px; transition: background-color 0.5s ease;}
+#donation_button:hover{background-color: #530202;}
 
 @media only screen and (min-width: 1000px){
     header{border: none; padding: 30px;}
     #respo{display: none;}
-    nav{flex-direction: row; justify-content: space-evenly; padding: 10px;}
+    nav{flex-direction: row; justify-content: space-evenly; padding: 15px;}
     nav a{display:block!important;}
+    nav a:hover{text-decoration: overline;}
 
-    .may_be_a_carousel img{display:block; width: 16%;}
 
-    
-    p{padding: 60px;}
-}
+    .may_be_a_carousel img{display:block; width: 16%;}}

@@ -1,8 +1,11 @@
 $(document).ready(function () {
     $("#respo").click(slideInAndOut);
 
-    for (let i = 0; i <= 17; i++) {
-        $('.img_grid').append(`<img src="img_small/sketch${i}.jpg" id="img${i}">`);
+    for (let i = 0; i <= 16; i++) {
+        $('.img_grid').append(`<div class="img_wrap">
+            <img src="img_small/sketch${i}.jpg" id="img${i}">
+            <div class="overlay-number">${i+1}</div>
+          </div>`);
     }
 
     $(".img_grid img").on("click", function () {
@@ -23,14 +26,6 @@ $(document).ready(function () {
                 scrollTop: target.offset().top
             }, 200); // smooth scroll in 800ms
         }
-    });
-
-    $("a").on("touchstart", function () {
-        $(this).addClass("link_hover_effect");
-      });
-    
-    $("#donation_button").on("touchstart", function () {
-        $(this).addClass("");
     });
 });
 
