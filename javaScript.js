@@ -13,11 +13,20 @@ function slideInAndOut() {
     $("nav a").slideToggle(1000);}
 
 function loadImages() {
-    for (let i = 0; i <= 16; i++) {
-        $('.img_grid').append(`<div class="img_wrap">
-            <img src="img_small/sketch${i}.jpg" id="img${i}">
-            <div class="overlay-number">${i + 1}</div>
-            </div>`);}}
+    $.getJSON("img_small/images.json")
+        .done(function (data) {
+            let number_of_images = data.length;
+
+            for (let i = 0; i < number_of_images; i++) {
+                $('.img_grid').append(`
+                        <div class="img_wrap">
+                            <img src="img_small/sketch${i}.jpg" id="img${i}">
+                            <div class="overlay-number">${i + 1}</div>
+                        </div>
+                    `);
+            }
+        });
+    }
 
 function openCloseFullScreen(){
     if (!document.fullscreenElement) {
