@@ -13,11 +13,7 @@ function slideInAndOut() {
     $("nav a").slideToggle(1000);}
 
 function loadImages() {
-    $.getJSON("img_small/images.json")
-        .done(function (data) {
-            let number_of_images = data.length;
-
-            for (let i = 0; i < number_of_images; i++) {
+            for (let i = 0; i < 17; i++) {
                 $('.img_grid').append(`
                         <div class="img_wrap">
                             <img src="img_small/sketch${i}.jpg" id="img${i}">
@@ -25,8 +21,7 @@ function loadImages() {
                         </div>
                     `);
             }
-        });
-    }
+}
 
 function openCloseFullScreen(){
     if (!document.fullscreenElement) {
